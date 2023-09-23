@@ -10,6 +10,11 @@ class TajvidPage extends StatefulWidget {
 class _TajvidPageState extends State<TajvidPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('TajvidPage'),
+      ),
+      body: Column(children: [Image.asset('assets/imag/chop.png')]),
+    );
   }
 }
