@@ -1,64 +1,62 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(TajvidPage());
-}
+import 'package:iqro/constants/color.dart';
+
+import '../components/containers/tajvidConatiner.dart';
 
 class TajvidPage extends StatefulWidget {
-  const TajvidPage({super.key});
+  const TajvidPage({Key? key}) : super(key: key);
 
   @override
-  State<TajvidPage> createState() => _TajvidPageState();
+  _TajvidPageState createState() => _TajvidPageState();
 }
 
 class _TajvidPageState extends State<TajvidPage> {
-  ThemeMode _themeMode = ThemeMode.system;
-  void changeTheme(ThemeMode themeMode) {
-    setState(() {
-      _themeMode = themeMode;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green),
-
-      // standard dark theme
-      darkTheme: ThemeData.dark(),
-      themeMode: _themeMode,
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Device Controlled theme Mode'),
+    return Scaffold(
+      appBar: AppBar(
+        leading: GestureDetector(
+          child: const Icon(
+            Icons.arrow_back_ios,
+            color: AppColors.white,
+          ),
+          onTap: () {
+            Navigator.pop(context);
+          },
         ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        centerTitle: true,
+        backgroundColor: AppColors.lazyr,
+        title: const Text(
+          'Сабак',
+          style: TextStyle(
+            color: AppColors.white,
+          ),
+        ),
+      ),
+      body: ListView(
+        children: const [
+          Column(
             children: [
-              Text(
-                'Choose your theme:',
+              ContainerTajvid(
+                icon2: Icons.settings,
+                textmd: '1-модуль',
+                texttm: 'Куран алипеси',
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // Change theme & rebuild to
-                  // show it using these buttons
-                  ElevatedButton(
-                      onPressed: () {
-                        changeTheme(ThemeMode.light);
-                      },
-                      child: Text('Light theme')),
-                  ElevatedButton(
-                      onPressed: () {
-                        changeTheme(ThemeMode.dark);
-                      },
-                      child: Text('Dark theme')),
-                ],
+              ContainerTajvid(
+                icon2: Icons.settings,
+                textmd: '2-модуль',
+                texttm: 'Тажвид',
+              ),
+              ContainerTajvid(
+                icon2: Icons.settings,
+                textmd: '3-модуль',
+                texttm: 'Куран алипеси',
               ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }

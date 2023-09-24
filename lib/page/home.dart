@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 import 'package:iqro/constants/color.dart';
 
-import '../components/buttons/categoy.dart';
-import '../components/buttons/iconOclock.dart';
-import '../components/buttons/textOclock.dart';
+import '../components/containers/categoy.dart';
+import '../components/containers/iconOclock.dart';
+import '../components/containers/textOclock.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
