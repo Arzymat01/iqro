@@ -1,18 +1,18 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
-class User extends StatefulWidget {
-  const User({Key? key}) : super(key: key);
-
-  @override
-  _UserState createState() => _UserState();
+void main() {
+  runApp(Userpage());
 }
 
-class _UserState extends State<User> {
+class Userpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('User'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Flutter GridView Demo"),
+        ),
       ),
     );
   }

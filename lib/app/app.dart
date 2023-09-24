@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iqro/main/mainView.dart';
-import 'package:iqro/page/home.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

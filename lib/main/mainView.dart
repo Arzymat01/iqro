@@ -14,7 +14,7 @@ class MianView extends StatefulWidget {
 class _MianViewState extends State<MianView> {
   int _selectedIndex = 0;
   List<Widget> pageList = [
-    User(),
+    Userpage(),
     Home(),
     TajvidPage(),
   ];
